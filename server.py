@@ -10,7 +10,7 @@ app = Flask("Emotion Detector")
 
 @app.route("/emotionDetector")
 def emotion_analyzer():
-    """Analyze the emotion of the text received from the web interface."""
+    """Analyze text from the web interface and return emotion scores."""
     text_to_analyze = request.args.get("textToAnalyze")
 
     response = emotion_detector(text_to_analyze)
@@ -45,3 +45,4 @@ def render_index_page():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+    
